@@ -1,35 +1,50 @@
 
 # MMUtilities
 
-## Descripción
-`MMUtilities` es una biblioteca de utilidades para la manipulación de archivos en C#. Provee métodos para copiar, mover, y listar archivos dentro de directorios, facilitando la gestión de archivos con soporte para búsquedas por extensión y opciones de sobreescritura.
+## Description
+`MMUtilities` is a C# utility library designed to facilitate various file and directory management operations. It includes functionalities for extracting ZIP files and for copying, moving, and listing files based on specific criteria such as file extension.
 
-## Instalación
-Clona este repositorio en tu máquina local utilizando:
+## Installation
+To use `MMUtilities`, first clone the repository to your local machine using:
 ```
-git clone https://github.com/Migsir/MM-CoreUtilities.git
+git clone https://your-repository/MMUtilities.git
 ```
+Then, include `MMUtilities` in your C# project to start using the provided tools.
 
-## Uso
-Para usar `MMUtilities`, incluye el archivo `FileOperations.cs` en tu proyecto de C# y asegúrate de importar el espacio de nombres `MMUtilities`:
+## Usage
+
+### ZIP File Extraction
+The `ZipExtractor` class provides functionalities for decompressing ZIP files, with options to overwrite existing files and move ZIP files after decompression.
+
+#### Usage Example:
 ```csharp
-using MMUtilities;
+var zipExtractor = new MMUtilities.ZipExtractor();
+zipExtractor.ExtractZipFiles(inputFolder: @"C:\path	o\input",
+                             outputFolder: @"C:\path	o\output",
+                             overrideFiles: true,
+                             moveZipsFolder: @"C:\path	o\move\zips");
 ```
 
-### Ejemplo de Copiado de Archivos por Extensión
+### File Operations
+The `FileOperations` class includes methods for copying or moving files based on file extension, as well as for listing all files within a directory, sorted by extension.
+
+#### Copy or Move Files by Extension
 ```csharp
-var fileOps = new FileOperations();
-fileOps.CopyFilesByExtension(@"C:\path	o\source", @"C:\path	o	arget", "txt", overwriteFiles: true, moveFiles: false);
+var fileOps = new MMUtilities.FileOperations();
+fileOps.CopyFilesByExtension(sourceDirectory: @"C:\path	o\source",
+                             targetDirectory: @"C:\path	o	arget",
+                             extension: "txt",
+                             overwriteFiles: true,
+                             moveFiles: false);
 ```
 
-### Ejemplo de Listado de Archivos
+#### List All Files in a Directory
 ```csharp
-var fileOps = new FileOperations();
-fileOps.DisplayAllFiles(@"C:\path	o\your\directory");
+fileOps.DisplayAllFiles(directoryPath: @"C:\path	o\directory");
 ```
 
-## Contribución
-Si deseas contribuir a `MMUtilities`, por favor haz un fork del repositorio y crea un pull request, o simplemente abre un issue con la etiqueta "enhancement".
+## Contributing
+If you would like to contribute to `MMUtilities`, please feel free to fork the repository, make your changes, and open a pull request for review.
 
-## Licencia
-Distribuido bajo la licencia MIT. Ver `LICENSE` para más información.
+## License
+`MMUtilities` is distributed under the MIT License. See the `LICENSE` file in the repository for more information.
