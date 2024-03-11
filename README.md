@@ -1,4 +1,4 @@
-[
+
 # MMUtilities
 
 ## Description
@@ -7,7 +7,7 @@
 ## Installation
 To use `MMUtilities`, first clone the repository to your local machine using:
 ```
-git clone https://your-repository/MMUtilities.git
+git clone https://github.com/Migsir/MM-CoreUtilities.git
 ```
 Then, include `MMUtilities` in your C# project to start using the provided tools.
 
@@ -48,4 +48,3 @@ If you would like to contribute to `MMUtilities`, please feel free to fork the r
 
 ## License
 `MMUtilities` is distributed under the MIT License. See the `LICENSE` file in the repository for more information.
-](https://github.com/Migsir/MM-CoreUtilities.git)https://github.com/Migsir/MM-CoreUtilities.git
